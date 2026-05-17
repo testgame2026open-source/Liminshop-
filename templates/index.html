@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liminshop - Маркетплейс</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">Liminshop</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Головна</a></li>
+                    <li><a href="#">Мої чати</a></li>
+                    <li><a href="#">Профіль</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="filters">
+                <h2>Фільтри</h2>
+                <div class="filter-group">
+                    <label>Пошук за назвою:</label>
+                    <input type="text" id="searchName" placeholder="Введіть назву товару">
+                </div>
+                
+                <div class="filter-group">
+                    <label>Цена від:</label>
+                    <input type="number" id="minPrice" placeholder="0">
+                </div>
+                
+                <div class="filter-group">
+                    <label>Цена до:</label>
+                    <input type="number" id="maxPrice" placeholder="10000">
+                </div>
+                
+                <div class="filter-group">
+                    <label>Категорія:</label>
+                    <select id="categoryFilter">
+                        <option value="">Всі категорії</option>
+                        <option value="сад">Сад</option>
+                        <option value="машини">Машини</option>
+                        <option value="бізнес_дом">Бізнес/Дом</option>
+                        <option value="інструменти">Інструменти</option>
+                        <option value="техніка">Техніка</option>
+                        <option value="ігрушки">Ігрушки</option>
+                    </select>
+                </div>
+                
+                <button onclick="filterProducts()">Пошукати</button>
+            </section>
+            
+            <section class="products">
+                <h2>Товари</h2>
+                <div id="productsList" class="products-grid">
+                    <!-- Товари будуть завантажені тут -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div id="chatModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close" onclick="closeChat()">&times;</span>
+            <h3>Чат з продавцем</h3>
+            <div id="chatMessages" class="chat-messages"></div>
+            <div class="chat-input">
+                <input type="text" id="messageInput" placeholder="Напишіть повідомлення...">
+                <button onclick="sendMessage()">Відправити</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
